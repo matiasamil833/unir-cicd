@@ -26,7 +26,7 @@ pipeline {
         stage('Run Unit Test') {
             steps {
                 sh 'make test-unit'
-                archiveArtifacts artifacts: 'results/unit_result.xml'
+                archiveArtifacts artifacts: 'results/*.xml'
             }
         }
         stage('Run API Test') {
