@@ -110,7 +110,6 @@ pipeline {
 
         failure {
             echo "Pipeline ${env.JOB_NAME} build ${env.BUILD_NUMBER} FALLÓ"
-            //TODO enviar mail
             mail to: "${env.EMAIL_NOTIFICATION}",
                  subject: "❌ FALLÓ el Pipeline: ${currentBuild.fullDisplayName}",
                  body: """¡Atención! El despliegue o la construcción ha fallado.
